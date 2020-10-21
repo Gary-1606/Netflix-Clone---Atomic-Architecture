@@ -1,0 +1,106 @@
+@import '../../../assets//styles/required';
+
+h2 {
+    padding: calcRem(15px);
+    padding-top: 0;
+    font-size: calcRem(26px);
+}
+
+.platform-main-container {
+    .platform-list-container {
+        background: #1f1f1f;
+
+        .platform-search {
+            position: relative;
+
+            .platform-search-input {
+                border: none;
+                width: 100%;
+                outline: none;
+                padding: 5px 5px 5px 25px;
+                background: #4e4e4e;
+                border-radius: 3px;
+                color: white;
+            }
+            .search-icon {
+                position: absolute;
+                top: 2px;
+            }
+        }
+    }
+
+    .platform-lists {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    @media (min-width: 768px) {
+        .platform-lists {
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+    }
+
+    .platform-list-heading {
+        font-weight: $font-weight-bold;
+        font-size: calcRem(16px);
+        padding: 10px 23px;
+    }
+
+    .platform-item {
+        cursor: pointer;
+        border-left: 3px solid $text--clr-1;
+        padding: 10px 5px;
+        padding-left: 20px;
+
+        .platform-asset-image {
+            width: 35px;
+            border-radius: 3px;
+        }
+
+        .platform-name {
+            display: inline-block;
+            color: $text--clr-1;
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background: $black;
+            border-left: 3px solid $color-pink;
+
+            .platform-name {
+                color: $white;
+            }
+        }
+    }
+    .poster-container {
+        @media (max-width: 768px) {
+            margin-top: calcRem(20px);
+        }
+        h3 {
+            font-size: calcRem(20px);
+        }
+        .row-poster {
+            display: flex;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            padding: calcRem(20px);
+            padding-left: 0;
+            &::-webkit-scrollbar {
+                display:none;
+            }
+            .poster {
+                object-fit: contain;
+                width: 100%;
+                height: calcRem(200px);
+                max-height: calcRem(200px);
+                margin-right: 10px;
+                transition: transform 500ms ease-in-out;
+                &:hover {
+                    transform: scale(1.08);
+                }
+            }
+        }
+
+    }
+}
